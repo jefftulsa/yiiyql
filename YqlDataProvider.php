@@ -88,50 +88,6 @@ class YqlDataProvider extends CDataProvider
 		}
 	}
 	
-	/*
-	protected function processDataRecursive($data, &$newArray, $newKeyName='')
-	{
-		
-		$newArray = (array)$data;
-		foreach($newArray as $name=>$value)
-		{
-			if(is_object($value))
-			{
-				echo "yes is object <br />";
-				//remove it from the $data array
-				unset($newArray[$name]);
-				if('' == $newKeyName) $newKeyName = $name;
-				else $newKeyName .= '.'.$name;
-				$this->processDataRecursive($value, $newArray, $newKeyName);
-			}
-			if($newKeyName != '')
-				$newArray[$newKeyName] = $value;
-		}
-		
-	}
-	*/
-	
-	/**
-	 * Fetches the data item keys returned from the yql query call.
-	 * @return array list of data item keys.
-	 */
-	/*
-	protected function fetchKeys()
-	{
-		$keys=array();
-		$i = 0;
-		foreach($this->getData() as $itemObject)
-		{
-			$propertyArray = get_object_vars($itemObject);
-			$key = array_keys($propertyArray);
-			$keys[$i]=is_array($key) ? implode(',',$key) : $key;
-			$i++;
-		}
-		return $keys;
-	}
-	*/
-	
-	
 	/**
 	 * Fetches the data item keys from the persistent data storage.
 	 * @return array list of data item keys.
