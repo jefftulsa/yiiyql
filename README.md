@@ -7,7 +7,11 @@ use in a Yii application.
 
 Initial Installation
 ====================
-You can either download the source files or fork on github. Then just add them to the extensions folder under your Yii application.
+You can either download the source files or clone from:
+
+git://github.com/jefftulsa/yiiyql.git
+
+Then just add them to the extensions folder under your Yii application.
 
 Example:
 ========
