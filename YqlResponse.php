@@ -1,5 +1,15 @@
 <?php
+/**
+ * This file contains a class to encapsulate the response returned from a call to YQL Web Service.
+ *
+ * @author Jefftulsa <jefftulsa@gmail.com>
+ * @link http://www.yiihaw.com/
+ * @license MIT
+ */
 
+/**
+ * YqlResponse encapsulates a returned YQL response.
+ */
 class YqlResponse extends CComponent
 {
 	private $_rawData;
@@ -11,6 +21,13 @@ class YqlResponse extends CComponent
 	private $_error;
 	private $_itemName;
 	            
+	/**
+	 * Constructor.
+	 * @param mixed $response the raw response returned from the query call
+	 * @param string $itemName the name of the main item returned in the query results. This will depend on the query being made
+	 * @param string $format the format of the returned response (can be either xml or json)
+	 * @param boolean $requestedError whether or not there was an error with the request
+	 */
 	public function __construct($response, $itemName, $format='json', $requestError=false)
 	{
 		if($requestError)
@@ -58,32 +75,54 @@ class YqlResponse extends CComponent
 		}
 	}
 	
+	/**
+	 * Returns the number of returned results.
+	 * @return integer count of items
+	 */
 	public function getCount()
 	{
 		return $this->_count;
 	}
 	
+	/**
+	 * Returns the date of the returned response.
+	 * @return string
+	 */
 	public function getDate()
 	{
 		return $this->_created;
 	}
 	
+	/**
+	 * Returns the language in which the returned results are written.
+	 * @return string
+	 */
 	public function getLanguage()
 	{
 		return $this->_language;
 	}
 	
+	/**
+	 * Returns the results (rows) of the response.
+	 * @return array of json objects representing the returned rows of data
+	 */
 	public function getResults()
 	{
 		$name = $this->_itemName;
 		return $this->_results->$name;
 	}
 	
+	/*
+	 * Returns the raw data from the response (i.e. in the raw json or xml format).
+	 */
 	public function getRawData()
     {
         return $this->_rawData;
     }
 
+	/*
+	 * Returns the full response (i.e. not just the data rows).
+	 */
     public function getFullData()
     {
         return $this->_data;	
