@@ -64,7 +64,7 @@ The first property under the `results` object is what needs to be specified as t
 Components
 ==========
 
-This extension as two main classes, and a custom [Data Provider](http://www.yiiframework.com/doc/api/1.1/CDataProvider/) class for ease of
+This extension has two main classes, and a custom [Data Provider](http://www.yiiframework.com/doc/api/1.1/CDataProvider/) class for ease of
 use with Zii data display widgets.
 
 YqlRequest class
